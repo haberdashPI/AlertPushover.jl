@@ -19,10 +19,7 @@ function pushover_alert!(;token=nothing,user=nothing)
         Alert.set_alert_backend!()
     end
 
-    println("HI!")
-
     Alert.set_alert_backend!() do message
-        println(message)
         HTTP.post("https://api.pushover.net/1/messages.json",[],
             HTTP.URIs.escapeuri(Dict(
                 :token => token,
@@ -30,8 +27,11 @@ function pushover_alert!(;token=nothing,user=nothing)
                 :message => message
             ))
         )
+
+        @info "Set message '"*message*"' to https://pushover.net."
     end
 
+    nothing
 end
 
 end
