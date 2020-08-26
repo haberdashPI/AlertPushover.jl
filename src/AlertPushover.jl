@@ -21,6 +21,10 @@ function pushover_alert!(;token=nothing,user=nothing)
 
     Alert.set_alert_backend!() do message
         HTTP.post("https://api.pushover.net/1/messages.json",[],
+            readtimeout = 30,
+            retry_non_indempotent = true,
+            retry = true,
+            retries = 8,
             HTTP.URIs.escapeuri(Dict(
                 :token => token,
                 :user => user,
