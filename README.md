@@ -4,11 +4,12 @@ AlertPushover provides a backend for [Alert](https://github.com/haberdashPI/Aler
 uses the [Pushover](https://pushover.net) service to send notifications remotely to the
 Pushover app. This makes `alert` useful even when working remotely or via an online IDE.
 
-You will need to sign up for an account (there is a 7-day trial, and it costs $5 after
-that). Install Pushover to receive your notifications (e.g. open the webapp, or install the
-app on your phone). Then create a new app on their website. You will then have a `user
-token` for your account, and an `API token` for the app you created. Then, in your
-`$HOME/.julia/config/startup.jl` file add the backend for Pushover as follows.
+You will need to sign up for an account (there is a 7-day trial, and there is a one-time $5
+charge to keep using it after that). Install Pushover to receive your notifications (e.g.
+open the webapp, or install the app on your phone). Then create a new app on their website.
+You will then have a `user token` for your account, and an `API token` for the app you
+created. Then, in your `$HOME/.julia/config/startup.jl` file add the backend for Pushover as
+follows.
 
 ```julia
 using AlertPushover
