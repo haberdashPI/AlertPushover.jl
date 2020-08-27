@@ -1,20 +1,21 @@
 # AlertPushover
 
-AlertPushover provides a backend for [Alert](https://github.com/haberdashPI/Alert.jl)
-using [Pushover](https://pushover.net). This allows notifications to be sent from, e.g.
-a batch job on a server, and you will get a notification on your desktop or phone,
-wherever you have pushover installed.
+AlertPushover provides a backend for [Alert](https://github.com/haberdashPI/Alert.jl). It
+uses the [Pushover](https://pushover.net) service to send notifications remotely to the
+Pushover app. This makes `alert` useful even when working remotely or via an online IDE.
 
-You will need to sign up for an account, and create a new app. You will have a `user
-token` for your account, an `API token` for the app. Then, in your `startup.jl`, or wherever
-you want to initialize your alerts, setup the backend for pushever as follows.
+You will need to sign up for an account (there is a 7-day trial, and it costs $5 after
+that). Install Pushover to receive your notifications (e.g. open the webapp, or install the
+app on your phone). Then create a new app on their website. You will then have a `user
+token` for your account, and an `API token` for the app you created. Then, in your
+`$HOME/.julia/config/startup.jl` file add the backend for Pushover as follows.
 
 ```julia
 using AlertPushover
 pushover_alert!(token = [API token], user = [user token])
 ```
 
-Now, when you call `alert`, as per its documentation, it will use the pushover service.
+Now, when you call `alert`, it will use the Pushover service, as follows.
 
 ```julia
 using Alert
@@ -25,3 +26,5 @@ end
 
 alert("Your julia script is finished!")
 ```
+
+See [Alert](https://github.com/haberdashPI/Alert.jl) for more details on its usage.
