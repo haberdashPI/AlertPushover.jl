@@ -8,6 +8,6 @@ Alert = "28312eec-4d86-447d-83ad-bc2b262de792"
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 
 [compat]
-julia = "1"
 Alert = "0.2"
-HTTP = "0.8"
+HTTP = "0.8, 0.9"
+julia = "1"
