@@ -1,5 +1,7 @@
 # AlertPushover
 
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 AlertPushover provides a backend for [Alert](https://github.com/haberdashPI/Alert.jl). It
 uses the [Pushover](https://pushover.net) service to send notifications remotely to the
 Pushover app. This makes `alert` useful even when working remotely or via an online IDE.
