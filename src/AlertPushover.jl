@@ -35,6 +35,7 @@ function pushover_alert!(;token=nothing,user=nothing)
 
         nothing
     end
+    @info "Using remote pushover service as `alert` backend."
 
     nothing
 end
